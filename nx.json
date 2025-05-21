@@ -25,38 +25,15 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "targetDefaults": {
-    "build": {
-      "cache": false
-    },
-    "test": {
-      "cache": false
-    },
-    "lint": {
-      "cache": false
-    },
-    "e2e-ci--**/**": {
-      "dependsOn": ["^build"]
-    }
+    "build": { "cache": false },
+    "test": { "cache": false },
+    "lint": { "cache": false },
+    "e2e-ci--**/**": { "dependsOn": ["^build"] }
   },
   "generators": {
     "@nx/react": {
@@ -66,9 +43,7 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": {
-        "style": "scss"
-      },
+      "component": { "style": "scss" },
       "library": {
         "style": "scss",
         "linter": "eslint",
@@ -77,5 +52,6 @@
         "unitTestRunner": "jest"
       }
     }
-  }
+  },
+  "nxCloudId": "682dcf0e246aae99cbac4e14"
 }
