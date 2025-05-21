@@ -11,6 +11,6 @@ The only thing that you need to do is to put the following accessToken configura
 ```json
 // nx.json
 {
-  "nxCloudAccessToken": "MWY1MzI0ZjMtZWZhNy00OWM3LTk3OTQtMjE4NWM5YjdhZmM1fHJlYWQtd3JpdGU="
+  "nxCloudId": "682dcf0e246aae99cbac4e14"
 }
 ```
