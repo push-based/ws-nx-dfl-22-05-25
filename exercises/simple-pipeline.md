@@ -56,7 +56,7 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - run: npm ci
+      - run: npm ci --force
 
 ```
 
