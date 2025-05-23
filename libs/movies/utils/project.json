@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/movies/utils/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:movies", "type:util"],
   "// targets": "to see all targets run: nx show project movies-utils --web",
   "targets": {}
 }

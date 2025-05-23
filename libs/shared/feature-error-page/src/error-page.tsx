@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import { Link, useRouteError } from 'react-router-dom';
+import { MovieDetails } from '@react-monorepo/movies-feature-detail-page';
 
 export default function ErrorPage() {
   const error = useRouteError() as any;
