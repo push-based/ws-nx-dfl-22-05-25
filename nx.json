@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "origin/julian-branch",
+  "defaultBase": "origin/continuous-tasks/eu-dfl2",
   "nxCloudId": "682dcf0e246aae99cbac4e14",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -54,6 +54,5 @@
         "unitTestRunner": "jest"
       }
     }
-  },
-  "nxCloudId": "682dcf0e246aae99cbac4e14"
+  }
 }
