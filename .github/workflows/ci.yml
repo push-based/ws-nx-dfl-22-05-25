@@ -53,7 +53,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --force
 
       - name: Start Nx Cloud DTE Agent
         run: npx nx-cloud start-agent
@@ -81,7 +81,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --force
 
       - name: Initialize the Nx Cloud distributed CI run
         run: npx nx-cloud start-ci-run --distribute-on="manual"
