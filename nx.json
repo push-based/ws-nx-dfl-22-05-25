@@ -1,8 +1,11 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "origin/main",
+  "defaultBase": "origin/feature/navbar-johann",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -26,15 +29,40 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
-    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
-    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
   ],
   "targetDefaults": {
-    "build": { "cache": true },
-    "test": { "cache": true },
-    "lint": { "cache": true },
-    "e2e-ci--**/**": { "dependsOn": ["^build"] }
+    "build": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "e2e-ci--**/**": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
   },
   "generators": {
     "@nx/react": {
@@ -44,7 +72,9 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": { "style": "scss" },
+      "component": {
+        "style": "scss"
+      },
       "library": {
         "style": "scss",
         "linter": "eslint",
