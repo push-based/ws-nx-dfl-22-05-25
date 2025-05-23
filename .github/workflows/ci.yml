@@ -18,11 +18,6 @@ concurrency:
   # Cancel stale pull request runs in progress for the same branch
   cancel-in-progress: ${{ github.event_name != 'push' }}
 
-env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
-  #NX_DISTRIBUTED_TASK_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 4 # expected number of agents
-
 jobs:
   dte_agents:
     name: DTE Agent ${{ matrix.agent }}
@@ -81,7 +76,7 @@ jobs:
       - run: npm ci --force
 
       - name: Initialize the Nx Cloud distributed CI run
-        run: npx nx-cloud start-ci-run --distribute-on="manual"
+        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
 
       - name: Run commands in parallel
         run: npx nx affected -t lint build --base=HEAD^
