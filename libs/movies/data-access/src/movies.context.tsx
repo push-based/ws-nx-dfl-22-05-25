@@ -9,6 +9,8 @@ interface MovieContextType {
   removeFromFavorites: (favoriteId: string, movieId: string) => void;
 }
 
+// 123
+
 const MovieContext = createContext<MovieContextType>({} as MovieContextType);
 
 export function MovieProvider({ children }: { children: React.ReactNode }) {
