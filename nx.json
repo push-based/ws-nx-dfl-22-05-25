@@ -51,13 +51,13 @@
   ],
   "targetDefaults": {
     "build": {
-      "cache": false
+      "cache": true
     },
     "test": {
-      "cache": false
+      "cache": true
     },
     "lint": {
-      "cache": false
+      "cache": true
     },
     "e2e-ci--**/**": {
       "dependsOn": ["^build"]
