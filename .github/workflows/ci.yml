@@ -1,19 +1,48 @@
 name: CI
+
 on:
   push:
     branches:
       - mgoldmann-nx-workshop
+
+
+concurrency:
+  # Group concurrency on workflow, then:
+  # - Is merge run? Group on branch name (`refs/heads/main`)
+  # - Is pull request? Group on pull request branch name, for example `feat/add-awesome-feature`
+  group: >-
+    ${{ github.workflow }}-${{
+      github.event_name == 'push'
+        && github.ref
+        || github.head_ref
+    }}
+  # Run merge workflows in sequence to prevent parallel deployments and releases
+  # Cancel stale pull request runs in progress for the same branch
+  cancel-in-progress: ${{ github.event_name != 'push' }}
+
 jobs:
   main:
+    name: DTE Coordinator
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Initialize the Nx Cloud distributed CI run
+        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
+
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
-
       - run: npm ci --force
-      - run: npx nx affected -t lint build --base=HEAD^
+
+      - name: Run commands in parallel
+        run: npx nx affected -t lint build --base=HEAD^
+
+      - name: Stop Nx Cloud DTE agents
+        if: ${{ always() }}
+        run: npx nx-cloud stop-all-agents
+
