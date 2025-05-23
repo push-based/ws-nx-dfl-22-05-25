@@ -1,0 +1,9 @@
+{
+  "name": "movies-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/movies/utils/src",
+  "projectType": "library",
+  "tags": ["scope:movies", "type:utils"],
+  "// targets": "to see all targets run: nx show project movies-utils --web",
+  "targets": {}
+}

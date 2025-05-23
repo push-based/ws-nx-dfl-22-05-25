@@ -1,0 +1,9 @@
+{
+  "name": "movies-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/movies/ui/src",
+  "projectType": "library",
+  "tags": ["scope:movies", "type:ui"],
+  "// targets": "to see all targets run: nx show project movies-ui --web",
+  "targets": {}
+}
