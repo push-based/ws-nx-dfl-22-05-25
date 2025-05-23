@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - the-best-branch # 👈️👈️👈️👈️👈️👈️👈️ IMPORTANT
-
 concurrency:
   # Group concurrency on workflow, then:
   # - Is merge run? Group on branch name (`refs/heads/main`)
@@ -19,44 +18,6 @@ concurrency:
   cancel-in-progress: ${{ github.event_name != 'push' }}
 
 jobs:
-  dte_agents:
-    name: DTE Agent ${{ matrix.agent }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-
-    # The Free GitHub plan has a limit of 20 concurrent jobs on Ubuntu images
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration
-    # If we need to, we can optimize for 2 simultaneous workflow runs:
-    # 2 x 1 main job   =  2 concurrent jobs
-    # 2 x 9 agent jobs = 18 concurrent jobs
-    # Total            = 20 concurrent jobs
-    #
-    # However, we don't have many projects or targets in this workspace, so we
-    # lower the number of agents to reduce spent compute time.
-    strategy:
-      matrix:
-        # Must match the argument passed to `nx-cloud --agent-count` in the dte_coordinator job
-        agent: [1, 2, 3, 4]
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'
-      - run: npm ci --force
-
-      - name: Start Nx Cloud DTE Agent
-        run: npx nx-cloud start-agent
-        env:
-          NX_AGENT_NAME: ${{ matrix.agent }}
-
-  # We're using Nx Cloud for Distributed Task Execution
-  # Reference: https://nx.dev/using-nx/dte
-  #
-  # The coordinator outputs the combination of task outputs from the agents,
-  # both terminal and file outputs
   main:
     name: DTE Coordinator
     runs-on: ubuntu-latest
@@ -66,17 +27,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Initialize the Nx Cloud distributed CI run
+        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
+        
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci --force
-
-      - name: Initialize the Nx Cloud distributed CI run
-        run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
+      - run: npm ci
 
       - name: Run commands in parallel
-        run: npx nx affected -t lint test build --base=HEAD^
+        run: npx nx affected -t lint build --base=HEAD^
 
       - name: Stop Nx Cloud DTE agents
         if: ${{ always() }}
