@@ -11,11 +11,11 @@
     },
     "deploy": {
       "command": "docker build -f tools/deploy/frontend.Dockerfile --build-arg='APP_NAME=movies' . -t ghcr.io/push-based/react-movies-app/react-movies-app:dev",
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "inputs": [
+        "dockerFiles",
+        { "dependentTasksOutputFiles": "**/dist/**/*", "transitive": true }
+      ]
     }
-  },
-  "inputs": [
-    "dockerFiles",
-    { "dependentTasksOutputFiles": "**/dist/**/*", "transitive": true }
-  ]
+  }
 }
