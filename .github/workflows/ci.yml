@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - solutions/libs-arch-enforced-tf
+      - solutions/libs-arch-enforced-tf-ci
 
 jobs:
   main:
