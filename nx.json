@@ -47,7 +47,7 @@
   ],
   "targetDefaults": {
     "build": {
-      "cache": false
+      "cache": true
     },
     "test": {
       "cache": false
