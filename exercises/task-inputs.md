@@ -55,7 +55,7 @@ The missing piece are of course the right inputs for the task.
 
 ## 1.1 namedInputs for dockerFiles
 
-First, create a section `namedSections` that has a configuration for
+First, create a section `namedInputs` that has a configuration for
 a `dockerFiles` input that points to the dockerfile we are using for the deployment.
 
 Go to the `project.json` of the `movies` app.
