@@ -54,10 +54,15 @@
     "lint": {
       "cache": false
     },
+    "deploy": {
+      "cache": false,
+      "dependsOn": ["build", "lint", "test"]
+    },
     "e2e-ci--**/**": {
       "dependsOn": ["^build"]
     }
   },
+  "defaultBase": "ws_david",
   "generators": {
     "@nx/react": {
       "application": {
