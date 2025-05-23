@@ -30,9 +30,9 @@
     { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "targetDefaults": {
-    "build": { "cache": false },
-    "test": { "cache": false },
-    "lint": { "cache": false },
+    "build": { "cache": true },
+    "test": { "cache": true },
+    "lint": { "cache": true },
     "e2e-ci--**/**": { "dependsOn": ["^build"] }
   },
   "generators": {
