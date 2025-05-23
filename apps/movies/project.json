@@ -10,8 +10,15 @@
       "dependsOn": [{ "projects": ["movies-api"], "target": "serve" }]
     },
     "deploy": {
+      "inputs": [
+        "dockerFiles",
+        { "dependentTasksOutputFiles": "**/dist/**/*", "transitive": true }
+      ],
       "command": "docker build -f tools/deploy/frontend.Dockerfile --build-arg='APP_NAME=movies' . -t ghcr.io/push-based/react-movies-app/react-movies-app:dev",
       "dependsOn": ["build"]
+    },
+    "namedInputs": {
+      "dockerFiles": ["{workspaceRoot}/tools/deploy/frontend.Dockerfile"]
     }
   }
 }
