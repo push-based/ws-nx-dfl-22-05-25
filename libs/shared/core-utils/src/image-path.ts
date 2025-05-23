@@ -1,1 +1,1 @@
-export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w800';
+export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w900';
