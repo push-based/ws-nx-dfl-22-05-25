@@ -1,6 +1,6 @@
 {
+  "defaultBase": "origin/tesnim",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "origin/main",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -15,6 +15,7 @@
     ],
     "sharedGlobals": []
   },
+   "nxCloudId": "682dcf0e246aae99cbac4e14",
   "plugins": [
     {
       "plugin": "@nx/vite/plugin",

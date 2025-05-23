@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import ResponsiveAppBar from '../layout/navbar';
+import { Navbar } from '@react-monorepo/movies-feature-navbar';
 
 export function Root() {
   return (
     <>
-      <ResponsiveAppBar />
+      <Navbar />
       <div style={{ padding: '10px' }}>
         <Outlet />
       </div>
