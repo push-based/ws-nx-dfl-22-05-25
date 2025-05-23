@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Movie } from '@react-monorepo/shared-models';
-import { API_URL } from '@react-monorepo/shared-core-utils'
+import { API_URL } from '@react-monorepo/shared-core-utils';
 
 interface MovieContextType {
   movies: Movie[];
@@ -15,6 +15,7 @@ export function MovieProvider({ children }: { children: React.ReactNode }) {
   const [movies, setMovies] = useState<Movie[]>([]); // All movies (fetched from API)
   const [favoritesIds, setFavorites] = useState<Record<string, string>>({});
 
+  //console.log
   // Fetch initial movies (replace with your actual API call)
   useEffect(() => {
     const fetchMovies = async () => {
