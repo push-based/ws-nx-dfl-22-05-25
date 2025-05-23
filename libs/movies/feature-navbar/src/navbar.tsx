@@ -77,7 +77,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            MOVIES
+            Filme
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
