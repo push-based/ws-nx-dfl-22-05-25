@@ -37,7 +37,7 @@ jobs:
       - run: npm ci --force
 
       - name: Run commands in parallel
-        run: npx nx affected -t lint build --base=HEAD^
+        run: npx nx affected -t build --base=HEAD^
 
       - name: Stop Nx Cloud DTE agents
         if: ${{ always() }}

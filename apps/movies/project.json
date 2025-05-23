@@ -7,6 +7,9 @@
   "// targets": "to see all targets run: nx show project movies --web",
 
   "targets": {
+    "build": {
+      "dependsOn": ["lint", "test"]
+    },
     "deploy": {
       "inputs": [
         "dockerFiles",

@@ -7,7 +7,7 @@ COPY tools/deploy/nginx.conf /etc/nginx/nginx.conf
 COPY dist/apps/$APP_NAME/browser /usr/share/nginx/html
 
 # this is just a comment 👈️ should be enough 🍋
-# geil
+# geil?
 
 CMD ["nginx", "-g", "daemon off;"]
 EXPOSE 80
