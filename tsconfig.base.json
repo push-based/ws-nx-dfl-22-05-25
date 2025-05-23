@@ -14,7 +14,42 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@react-monorepo/movies-data-access": [
+        "libs/movies/data-access/src/index.ts"
+      ],
+      "@react-monorepo/movies-feature-detail-page": [
+        "libs/movies/feature-movie-detail-page/src/index.ts"
+      ],
+      "@react-monorepo/movies-feature-favorites-page": [
+        "libs/movies/feature-favorites-page/src/index.ts"
+      ],
+      "@react-monorepo/movies-feature-home-page": [
+        "libs/movies/feature-movie-home-page/src/index.ts"
+      ],
+      "@react-monorepo/movies-feature-navbar": [
+        "libs/movies/feature-navbar/src/index.ts"
+      ],
+      "@react-monorepo/movies-ui": ["libs/movies/ui/src/index.ts"],
+      "@react-monorepo/movies-utils": ["libs/movies/utils/src/index.ts"],
+      "@react-monorepo/shared-auth-data-access": [
+        "libs/shared/auth/data-access/src/index.ts"
+      ],
+      "@react-monorepo/shared-auth-feature-guarded-route": [
+        "libs/shared/auth/feature-guarded-route/src/index.ts"
+      ],
+      "@react-monorepo/shared-auth-ui-not-authenticated-page": [
+        "libs/shared/auth/ui-not-authenticated-page/src/index.ts"
+      ],
+      "@react-monorepo/shared-core-utils": [
+        "libs/shared/core-utils/src/index.ts"
+      ],
+      "@react-monorepo/shared-feature-error-page": [
+        "libs/shared/feature-error-page/src/index.ts"
+      ],
+      "@react-monorepo/shared-models": ["libs/shared/models/src/index.ts"],
+      "@react-monorepo/shared-ui": ["libs/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
