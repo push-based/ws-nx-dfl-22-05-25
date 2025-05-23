@@ -1,0 +1,9 @@
+{
+  "name": "movies-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/movies/data-access/src",
+  "projectType": "library",
+  "tags": ["scope:movies", "type:data-access"],
+  "// targets": "to see all targets run: nx show project movies-data-access --web",
+  "targets": {}
+}
