@@ -1,0 +1,9 @@
+{
+  "name": "shared-auth-feature-guarded-route",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/auth/feature-guarded-route/src",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:feature"],
+  "// targets": "to see all targets run: nx show project shared-auth-feature-guarded-route --web",
+  "targets": {}
+}

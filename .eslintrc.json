@@ -13,8 +13,41 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:movies",
+                "onlyDependOnLibsWithTags": ["scope:movies", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:data-access",
+                  "type:ui",
+                  "type:utils"
+                ]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:data-access",
+                  "type:utils"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:utils"
+                ]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils"
+                ]
               }
             ]
           }
