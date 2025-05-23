@@ -15,4 +15,6 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+
+      - run: npm ci --force
+      - run: npx nx affected -t lint build --base=HEAD^
