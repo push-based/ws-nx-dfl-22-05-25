@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches:
+      - the-best-branch # 👈️👈️👈️👈️👈️👈️👈️ IMPORTANT
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npx nx affected -t lint build --base=HEAD^
