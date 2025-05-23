@@ -18,7 +18,7 @@ export default function useMovieDetails() {
         const response = await fetch(`${API_URL}/movies/${movieId}`);
 
         if (!response.ok) {
-          throw new Error('Movie not found.'); // Or a more descriptive error
+          throw new Error('Movie not found!'); // Or a more descriptive error
         }
 
         const data = await response.json();
