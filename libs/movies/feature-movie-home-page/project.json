@@ -1,0 +1,9 @@
+{
+  "name": "movies-feature-home-page",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/movies/feature-movie-home-page/src",
+  "projectType": "library",
+  "tags": ["scope:movies", "type:feature"],
+  "// targets": "to see all targets run: nx show project movies-feature-home-page --web",
+  "targets": {}
+}
